@@ -1,12 +1,92 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+
+import Home from './src/Home';
+import Contact from './src/Contact';
+import About from './src/About';
+import Schedule from './src/Schedule';
+import HomeList from './src/HomeList';
+import HomeProduct from './src/HomeProducts';
+
+
+const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+
+function HomeStack(){
+  return (
+    <Stack.Navigator>
+      <Stack.Screen 
+        name="Home" 
+        component={Home}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen 
+        name="HomeList" 
+        component={HomeList}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen 
+        name="HomeProduct" 
+        component={HomeProduct}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <NavigationContainer>
       <StatusBar style="auto" />
-    </View>
+      <Tab.Navigator
+        screenOptions={{
+          headerTitleAlign: 'center'
+        }}>
+        <Tab.Screen 
+          name="Restaurante"
+          component={HomeStack}
+          options={{
+            tabBarLabel: 'Home',
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name='home-outline' color={color} size={size}/>
+            )
+          }} />
+             <Tab.Screen 
+          name="Horários"
+          component={Schedule}
+          options={{
+            tabBarLabel: 'Horários',
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name='time-outline' color={color} size={size}/>
+            )
+          }} />
+             <Tab.Screen 
+          name="Contato"
+          component={About}
+          options={{
+            tabBarLabel: 'Contato',
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name='call-outline' color={color} size={size}/>
+            )
+          }} />
+             <Tab.Screen 
+          name="Sobre"
+          component={About}
+          options={{
+            tabBarLabel: 'Sobre',
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name='information-circle-outline' color={color} size={size}/>
+            )
+          }} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 
