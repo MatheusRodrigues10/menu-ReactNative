@@ -1,11 +1,13 @@
 import React from "react";
 import { Text, Image, StyleSheet, View } from "react-native";
 
-const HomeProduct = () => {
+const HomeProduct = ({ route }) => {
+
+    const { title='não conseguiu achar o item', products='não conseguiu achar o item' } = route.params || {}
 
     return (
         <View style={styles.container}>
-            <Text>AAAA</Text>
+            <Text>{title}</Text>
         </View>
     );
 };

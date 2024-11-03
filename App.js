@@ -11,7 +11,7 @@ import Contact from './src/Contact';
 import About from './src/About';
 import Schedule from './src/Schedule';
 import HomeList from './src/HomeList';
-import HomeProduct from './src/HomeProducts';
+import HomeProduct from './src/HomeProduct';
 
 
 const Tab = createBottomTabNavigator();
@@ -47,7 +47,8 @@ export default function App() {
       <StatusBar style="auto" />
       <Tab.Navigator
         screenOptions={{
-          headerTitleAlign: 'center'
+          headerTitleAlign: 'center',
+          tabBarActiveTintColor: '#30D5C8'
         }}>
         <Tab.Screen 
           name="Restaurante"
