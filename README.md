@@ -1,6 +1,6 @@
 # Projeto de App de Restaurante
 
-Este é um projeto de aplicativo de restaurante desenvolvido por Matheus. O objetivo principal é fornecer um layout de código aberto que possa ser reutilizado para a criação de aplicativos personalizados.
+Este é um projeto de aplicativo de restaurante. O objetivo principal é fornecer um layout de código aberto que possa ser reutilizado para a criação de aplicativos personalizados.
 
 ## Instalação
 
