@@ -70,7 +70,7 @@ export default function App() {
           }} />
              <Tab.Screen 
           name="Contato"
-          component={About}
+          component={Contact}
           options={{
             tabBarLabel: 'Contato',
             tabBarIcon: ({ color, size }) => (
