@@ -35,4 +35,3 @@ Este aplicativo foi criado para ser um layout de código aberto, permitindo que 
 Sinta-se à vontade para contribuir e modificar o projeto conforme desejar!
 
 Obrigado por conferir o projeto!
-```
